@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pi Stats Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .card { border: 1px solid #ccc; padding: 20px; margin: 10px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Raspberry Pi Stats Dashboard</h1>
+    <div class="card">
+        <p><strong>CPU Usage:</strong> {{ stats.cpu_percent }}%</p>
+        <p><strong>Memory Usage:</strong> {{ stats.mem_percent }}%</p>
+        <p><strong>Disk Usage:</strong> {{ stats.disk_percent }}%</p>
+        <p><strong>Time:</strong> {{ stats.time }}</p>
+    </div>
+</body>
+</html>

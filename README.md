@@ -15,11 +15,13 @@ The focus is on **robotics simulations** and **basic simulation dashboards**, ma
 ## 📂 Project Structure
 Each app lives in its own folder:
 - `dashboard/` → System monitoring and stats (CPU, memory, sensors).
-- `quote_generator/` → Example app with JSON-driven content and GUI.
 - `robotics_sim/` → Flask endpoints for robotics simulation/control.
 
 ---
 
 ## 🚀 Getting Started
-1. Clone the repository: --> to be updated...
+1. Clone the repository: --> 
+2. Test projects (example)
+    2.1 pi_status_app
+        2.1.1 app.py (run this, stats on port 5000)
 
