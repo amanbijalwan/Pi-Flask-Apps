@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LED Control Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; }
+        .card { border: 1px solid #ccc; padding: 20px; margin: 10px; border-radius: 8px; background: #fff; }
+        button { padding: 10px 20px; font-size: 18px; cursor: pointer; }
+        .led { font-size: 40px; }
+    </style>
+</head>
+<body>
+    <h1>💡 Raspberry Pi LED Control</h1>
+    <div class="card">
+        <p><strong>Note:</strong> Connect the LED to GPIO17 with a 220Ω–330Ω resistor in series, and GND to Pi’s ground pin.</p>
+        <form action="/toggle">
+            <button type="submit">
+                {% if led_state %}
+                    Turn LED Off
+                {% else %}
+                    Turn LED On
+                {% endif %}
+            </button>
+        </form>
+        <p class="led">
+            {% if led_state %}
+                💡 LED is ON
+            {% else %}
+                ⚫ LED is OFF
+            {% endif %}
+        </p>
+    </div>
+</body>
+</html>
