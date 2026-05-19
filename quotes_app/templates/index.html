@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quote App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        async function loadQuote() {
+            const category = document.getElementById("category").value;
+            const response = await fetch("/get_quote", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: "category=" + category
+            });
+            const data = await response.json();
+            document.getElementById("quote-box").innerText = data.quote;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>📖 Quote Generator</h1>
+        <p>Select a category and get inspired!</p>
+        <select id="category">
+            {% for cat in categories %}
+                <option value="{{ cat }}">{{ cat }}</option>
+            {% endfor %}
+        </select>
+        <button onclick="loadQuote()">✨ Get Quote</button>
+        <h3><div id="quote-box" class="quote-box">Your quote will appear here...</div></h3>
+    </div>
+</body>
+</html>
