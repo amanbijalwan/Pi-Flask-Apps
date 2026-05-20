@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Buy groceries",
+        "category": "Personal",
+        "done": false
+    },
+    {
+        "title": "Finish Flask project",
+        "category": "Work",
+        "done": false
+    },
+    {
+        "title": "Do the app coding.",
+        "category": "Work",
+        "done": true
+    },
+    {
+        "title": "Update notes flask app on github",
+        "category": "Work",
+        "done": true
+    },
+    {
+        "title": "About flask",
+        "category": "Study",
+        "done": false
+    }
+]

@@ -1,0 +1,55 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #222094;
+    text-align: center;
+    padding: 40px;
+}
+
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: inline-block;
+    width: 600px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.add-form input, .add-form select, .add-form button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.add-form button {
+    background: #0078d7;
+    color: white;
+    cursor: pointer;
+}
+
+.add-form button:hover {
+    background: #005a9e;
+}
+
+.notes {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.card {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.card.done {
+    background: #e0ffe0;
+    text-decoration: line-through;
+}

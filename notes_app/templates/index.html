@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📝 Notes Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Notes & To‑Do Dashboard</h1>
+        <form action="/add" method="post" class="add-form">
+            <input type="text" name="title" placeholder="Enter note..." required>
+            <select name="category">
+                {% for cat in categories %}
+                    <option value="{{ cat }}">{{ cat }}</option>
+                {% endfor %}
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+                <option value="Study">Study</option>
+            </select>
+            <button type="submit">➕ Add</button>
+        </form>
+
+        <div class="notes">
+            {% for note in notes %}
+                <div class="card {% if note.done %}done{% endif %}">
+                    <p><strong>{{ note.title }}</strong> (📂 {{ note.category }})</p>
+                    <a href="/toggle/{{ loop.index0 }}">
+                        {% if note.done %}✅ Mark Undone{% else %}✔️ Mark Done{% endif %}
+                    </a>
+                    <a href="/delete/{{ loop.index0 }}">🗑️ Delete</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
