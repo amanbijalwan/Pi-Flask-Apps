@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🌍 World Clock & Converter 🌏</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 World Clock 🌏</h1>
+        <div class="clock-grid">
+            {% for city, time in current_times.items() %}
+                <div class="card">
+                    <h2>{{ city }}</h2>
+                    <p>🕒 {{ time }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <h1>🔄 Timezone Converter</h1>
+        <form method="post">
+            <label>From City:</label>
+            <select name="from_city">
+                {% for city in timezones %}
+                    <option value="{{ city }}">{{ city }}</option>
+                {% endfor %}
+            </select>
+
+            <label>To City:</label>
+            <select name="to_city">
+                {% for city in timezones %}
+                    <option value="{{ city }}">{{ city }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Enter Time (YYYY-MM-DD HH:MM:SS):</label>
+            <input type="text" name="input_time" required>
+
+            <button type="submit">Convert</button>
+        </form>
+
+        {% if converted_time %}
+            <div class="result">
+                <p>✨ Converted Time: {{ converted_time }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
